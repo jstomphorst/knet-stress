@@ -25,7 +25,7 @@ metadata:
   name: knet-stress
   namespace: knet-stress
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   namespace: knet-stress
@@ -36,7 +36,7 @@ rules:
   verbs: ["get", "list", "watch"]
 ---
 kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: knet-stress
   namespace: knet-stress
@@ -81,7 +81,7 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: spec.nodeName
-        image: gcr.io/jetstack-josh/knet-stress:v0.1.0-alpha.1
+        image: janstomphorst/knet-stress:v0.1.0-alpha.2
         imagePullPolicy: Always
         name: knet-stress
         ports:
@@ -129,7 +129,7 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: spec.nodeName
-        image: gcr.io/jetstack-josh/knet-stress:v0.1.0-alpha.1
+        image: janstomphorst/knet-stress:v0.1.0-alpha.2
         imagePullPolicy: Always
         name: knet-stress
         ports:
